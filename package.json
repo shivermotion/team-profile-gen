@@ -1,6 +1,7 @@
 {
-  "name": "team-profile-generator",
+  "name": "Team-Profile-Gen",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -12,5 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "jest": "^27.4.4"
+  }
 }
