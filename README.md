@@ -1,6 +1,6 @@
 
 # Team Profile Generator
-	![10-object-oriented-programming-homework-demo](https://user-images.githubusercontent.com/75548830/150481289-a3ea2696-8a1f-4ca6-b0b1-7d7068477c34.png)
+![10-object-oriented-programming-homework-demo](https://user-images.githubusercontent.com/75548830/150481289-a3ea2696-8a1f-4ca6-b0b1-7d7068477c34.png)
 	
 Screencastify video:                          Repo:
 # Table of Content
