@@ -1,7 +1,3 @@
-const {
-	getMaxListeners,
-	hasUncaughtExceptionCaptureCallback,
-} = require("process");
 const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
@@ -9,27 +5,62 @@ describe("Employee", () => {
 		it("should pass and instantiate object correctly", () => {
 			let testEmployee = new Employee(
 				"Jason",
-				1,
-				"jason.day.blue@gmail.com"
+				"jason.day.blue@gmail.com",
+				1
 			);
 
 			expect(testEmployee.name).toBe("Jason");
-			expect(testEmployee.id).toBe(1);
 			expect(testEmployee.email).toBe(
-				"jason.day.blue.gmail.com"
+				"jason.day.blue@gmail.com"
 			);
+			expect(testEmployee.id).toBe(1);
 		});
 	});
 	describe("getName", () => {
-		it("should ", () => {});
+		it("should return name correctly", () => {
+			let testEmployee = new Employee(
+				"Jason",
+				"jason.day.blue@gmail.com",
+				1
+			);
+
+			let name = testEmployee.getName();
+			expect(name).toBe("Jason");
+		});
 	});
 	describe("getEmail", () => {
-		it("should ", () => {});
+		it("should return email selected", () => {
+			let testEmployee = new Employee(
+				"Jason",
+				"jason.day.blue@gmail.com",
+				1
+			);
+
+			let email = testEmployee.getEmail();
+			expect(email).toBe("jason.day.blue@gmail.com");
+		});
 	});
 	describe("getId", () => {
-		it("should ", () => {});
+		it("should return id correctly. ", () => {
+			let testEmployee = new Employee(
+				"Jason",
+				"jason.day.blue@gmail.com",
+				1
+			);
+
+			let id = testEmployee.getId();
+			expect(id).toBe(1);
+		});
 	});
 	describe("getRole", () => {
-		it("should ", () => {});
+		it("should return role correctly ", () => {
+			let testEmployee = new Employee(
+				"Jason",
+				"jason.day.blue@gmail.com",
+				1
+			);
+			let role = testEmployee.getRole();
+			expect(role).toBe("Employee");
+		});
 	});
 });
