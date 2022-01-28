@@ -121,16 +121,15 @@ async function combinePrompts() {
 	promptManager()
 		.then(promptEngineer)
 		.then(promptIntern)
-		.then((response) =>
-			fs.writeFileSync("index.html", generateHTML(response))
-		)
+		.then(() => {
+			console.log(team);
+			fs.writeFileSync("index.html", generateHTML(team));
+		})
 		.then(() => console.log("Successfully wrote to index.html"))
 		.catch((err) => console.error(err));
 }
 
-combinePrompts();
-
-const generateHTML = () =>
+const generateHTML = (team) =>
 	`<!doctype html>
 	<html lang="en">
 	
@@ -180,16 +179,16 @@ const generateHTML = () =>
 									<h5 class="card-title">Manager</h5>
 									<ul style="list-style: none;">
 										<li>
-											<p class="card-text">${manager.name}</p>
+											<p class="card-text">${team[0].name}</p>
 										</li>
 										<li>
-											<p class="card-text">${email}</p>
+											<a><p class="card-text">${team[0].email}</p></a>
 										</li>
 										<li>
-											<p class="card-text">${id}</p>
+											<p class="card-text">${team[0].id}</p>
 										</li>
 										<li>
-											<p class="card-text">${officeNumber}</p>
+											<p class="card-text">${team[0].officeNumber}</p>
 										</li>
 	
 									</ul>
@@ -217,16 +216,16 @@ const generateHTML = () =>
 									<h5 class="card-title">Engineer</h5>
 									<ul style="list-style: none;">
 										<li>
-											<p class="card-text">${name}</p>
+											<p class="card-text">${team[1].name}</p>
 										</li>
 										<li>
-											<p class="card-text">${email}</p>
+											<a><p class="card-text">${team[1].email}</p></a>
 										</li>
 										<li>
-											<p class="card-text">${id}</p>
+											<p class="card-text">${team[1].id}</p>
 										</li>
 										<li>
-											<p class="card-text">${gitub}</p>
+											<a><p class="card-text">${team[1].github}</p><a/>
 										</li>
 	
 									</ul>
@@ -254,16 +253,16 @@ const generateHTML = () =>
 									<h5 class="card-title"> Intern </h5>
 									<ul style="list-style: none;">
 										<li>
-											<p class="card-text">${name}</p>
+											<p class="card-text">${team[2].name}</p>
 								
 							
-											<p class="card-text">${email}</p>
+											<a><p class="card-text">${team[2].email}</p></a>
 								
 							
-											<p class="card-text">${id}</p>
+											<p class="card-text">${team[2].id}</p>
 								
 							
-											<p class="card-text">${school}</p>
+											<p class="card-text">${team[2].school}</p>
 										</li>
 	
 									</ul>
@@ -327,3 +326,7 @@ const generateHTML = () =>
 	</body>
 	
 	</html>`;
+
+// console.log(team[0]);
+combinePrompts();
+// console.log(team);
